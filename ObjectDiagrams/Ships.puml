@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "<u>shippy:Ship</u>" as sy {
+    name = "Shippy"
+    year_built = 1900
+}
+
+object "<u>ssTipton:CruiseShip</u>" as st {
+    name = "SS Tipton"
+    year_built = 2000
+    max_number_of_passengers = 1000
+}
+
+object "<u>hauly:CargoShip</u>" as hy {
+    name = "Hauly"
+    year_built = 1900
+    cargo_capacity = 1000000
+}
+
+sy -- "ship_array[0]"
+st -- "ship_array[1]"
+hy -- "ship_array[2]"
+
+@enduml

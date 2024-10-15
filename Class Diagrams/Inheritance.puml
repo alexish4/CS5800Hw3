@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Employee {
+    #first_name : String
+    #last_name : String
+    #social_security_number : String
+
+    +Employee(first_name : String, last_name : String, social_security_number : String)
+    +Employee()
+    +setFirst_name(first_name : String) : void
+    +setLast_name(last_name : String) : void
+    +setSocial_security_number(social_security_number : String) : void
+    +getFirst_name() : String
+    +getLast_name() : String
+    +getSocial_security_number() : String
+}
+
+class BaseEmployee extends Employee {
+    -base_salary : double
+
+    +BaseEmployee(first_name : String, last_name : String, social_security_number : String, base_salary : double)
+    +BaseEmployee()
+    +getBase_salary() : double
+    +setBase_salary(base_salary : double) : void
+}
+
+class CommisionEmployee extends Employee {
+    -commission_rate : double
+    -gross_salary : double
+
+    +CommisionEmployee(first_name : String, last_name : String, social_security_number : String, commission_rate : double, gross_salary : double)
+    +CommisionEmployee()
+    +setCommissionRate(commission_rate : double) : void
+    +getCommission_rate() : double
+    +setGrossSalary(gross_salary : double) : void
+    +getGrossSalary() : double
+}
+
+class HourlyEmployee extends Employee {
+    -wage : double
+    -numbers_of_hours_worked : int
+
+    +HourlyEmployee(first_name : String, last_name : String, social_security_number : String, wage : double, numbers_of_hours_worked : int)
+    +HourlyEmployee()
+    +getWage() : double
+    +setWage(wage : double) : void
+    +getNumbers_of_hours_worked() : int
+    +setNumbers_of_hours_worked(numbers_of_hours_worked : int) : void
+}
+
+class SalariedEmployee extends Employee {
+    -weekly_salary : double
+
+    +SalariedEmployee(first_name : String, last_name : String, social_security_number : String, weekly_salary : double)
+    +SalariedEmployee()
+    +getWeekly_salary() : double
+    +setWeekly_salary(weekly_salary : double) : void
+}
+
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Ship {
+    #name : String
+    #year_built : int
+
+    +Ship(name : String, year_built : int)
+    +Ship()
+    +getName() : String
+    +setName(name : String) : void
+    +getYear_built() : int
+    +setYear_built(year_built : int) : void
+    +printShipInfo() : void
+}
+
+class CruiseShip extends Ship {
+    -max_number_of_passengers : int
+
+    +CruiseShip()
+    +CruiseShip(name : String, year_built : int, max_number_of_passengers : int)
+    +getMax_number_of_passengers() : int
+    +setMax_number_of_passengers(max_number_of_passengers : int) : void
+    +printShipInfo() : void
+}
+
+class CargoShip extends Ship {
+    -cargo_capacity : int
+
+    +CargoShip(name : String, year_built : int, cargo_capacity : int)
+    +CargoShip()
+    +getCargo_capacity() : int
+    +setCargo_capacity(cargo_capacity : int) : void
+    +printShipInfo() : void
+}
+
+
+@enduml

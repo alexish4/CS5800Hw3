@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "<u>advancedSoftwareEngineering:Course</u>" as ase {
+    name = "Advanced Software Engineering"
+}
+
+object "<u>nima:Instructor</u>" as nima {
+    first_name = "Nima"
+    last_name = "Davarpanah"
+    office_number = "3-2636"
+}
+
+object "<u>cleanCode:Textbook</u>" as clean_code {
+    title = "Clean Code"
+    author = "Robert C. Martin"
+    publisher = "Pearson"
+}
+
+ase --o nima
+ase --o clean_code
+@enduml

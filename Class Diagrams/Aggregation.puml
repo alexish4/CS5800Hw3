@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Course {
+    -name : String
+    -instructors : ArrayList<Instructor>
+    -textbooks : ArrayList<Textbook>
+    +Course(String name)
+    +Course()
+    +getName() : String
+    +setName() : void
+    +getInstructors() : ArrayList<Instructor>
+    +setInstructors(instructors : ArrayList<Instructor>) : void
+    +getTextbooks() : ArrayList<Textbook>
+    +setTextbooks(textbooks : ArrayList<Textbook>) : void
+    +addInstructor(instructor : Instructor) : Instructor
+    +addTextbook(textbook : Textbook) : Textbook
+    +removeInstructor(instructor : Instructor) : void
+    +removeTextbook(textbook : Textbook) : void
+    +printCourseInfo() : void
+}
+class Instructor {
+    -first_name : String
+    -last_name : String
+    -office_number : String
+
+    +Instructor(first_name : String, last_name : String, office_number : String)
+    +Instructor()
+    +getFirst_name() : String
+    +setFirst_name(first_name : String) : void
+    +getLast_name() : String
+    +setLast_name(last_name : String) : void
+    +getOffice_number() : String
+    +setOffice_number(office_number : String) : void
+}
+
+class Textbook {
+    -title : String
+    -author : String
+    -publisher : String
+
+    +Textbook(title : String, author : String, publisher : String)
+    +Textbook()
+    +getTitle() : String
+    +setTitle(title : String) : void
+    +getAuthor() : String
+    +setAuthor(author : String) : void
+    +getPublisher() : String
+    +setPublisher(publisher : String) : void
+}
+
+
+Course --o Instructor
+Course --o Textbook
+
+@enduml

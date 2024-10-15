@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Folder {
+    -folder_name : String
+    -treeLevelRelativeToParent : int = 0
+    -subfolders : ArrayList<Folder>
+    -files : ArrayList<File>
+
+    +Folder(folderName : String)
+    +Folder()
+    +getSubfolders() : ArrayList<Folder>
+    +setSubfolders(subfolders : ArrayList<Folder>) : void
+    +getFiles() : ArrayList<File>
+    +setFiles(files : ArrayList<File>) : void
+    +getFolder_name() : String
+    +setFolder_name(folder_name : String) : void
+    +addSubFolder(subFolderName : String) : Folder
+    +removeSubFolder(folder : Folder) : void
+    +addFile(fileName : String) : File
+    +removeFile(file : File) : void
+    +getTreeLevelRelativeToParent() : int
+    +setTreeLevelRelativeToParent(treeLevelRelativeToParent : int) : void
+    +printFolderTree() : void
+}
+
+class File {
+    -name : String
+
+    +File(file_name : String)
+    +File()
+    +getName() : String
+    +setName(file_name : String) : void
+}
+
+Folder --* File
+
+@enduml
